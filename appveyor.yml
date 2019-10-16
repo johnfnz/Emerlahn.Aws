@@ -21,8 +21,8 @@ build_script:
   - pwsh: dotnet pack -c Release
 
 artifacts:
-  - path: \Emerlahn.Ssm\bin\Release\*.nupkg
-    name: Emerlahn.Ssm
+  - path: \Emerlahn.AwsSsm\bin\Release\*.nupkg
+    name: Emerlahn.AwsSsm
 
 deploy:
 - provider: NuGet
