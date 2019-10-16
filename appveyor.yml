@@ -1,4 +1,4 @@
-version: 3.2.0.{build}
+version: 1.0.1.{build}
 
 branches:
   only:
@@ -36,6 +36,7 @@ deploy:
   server:
   api_key:
     secure: pEEcr9Q18gv57zbNi0HFDlMBcY7/peFMBP40cYGyezyaR7Tlba4cX2887ksONfJS
+  tag: $(APPVEYOR_REPO_TAG_NAME)
   on:
     branch: master
     appveyor_repo_tag: true
