@@ -1,0 +1,41 @@
+version: 3.2.0.{build}
+
+branches:
+  only:
+    - master
+
+init:
+  # Good practise, because Windows line endings are different from Unix/Linux ones
+  - cmd: git config --global core.autocrlf true
+
+before_build:
+  # Display .NET Core version
+  - cmd: dotnet --version
+  # Display minimal restore text
+  - cmd: dotnet restore --verbosity m
+
+nuget:
+  disable_publish_on_pr: true
+
+build_script:
+  - pwsh: dotnet pack -c Release
+
+artifacts:
+  - path: \Emerlahn.Ssm\bin\Release\*.nupkg
+    name: Emerlahn.Ssm
+
+deploy:
+- provider: NuGet
+  server: https://ci.appveyor.com/nuget/johnfahey-dtn0ofenb6gs
+  api_key:
+    secure: epbsnPYngj++DFStPqChVVabPI13sk9A5DWAiHg61UY=
+  on:
+    branch: master
+- provider: NuGet
+  name: Production
+  server:
+  api_key:
+    secure: pEEcr9Q18gv57zbNi0HFDlMBcY7/peFMBP40cYGyezyaR7Tlba4cX2887ksONfJS
+  on:
+    branch: master
+    appveyor_repo_tag: true
