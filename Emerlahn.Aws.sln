@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emerlahn.AwsSsm", "Emerlahn.AwsSsm\Emerlahn.AwsSsm.csproj", "{79C95BDA-77C8-4E24-A7F6-15EA3B55C210}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emerlahn.AwsSsm", "Emerlahn.AwsSsm\Emerlahn.AwsSsm.csproj", "{79C95BDA-77C8-4E24-A7F6-15EA3B55C210}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5E7BA89E-8EF6-4207-9698-4BDDCB8C77FC}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
