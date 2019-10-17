@@ -25,18 +25,12 @@ artifacts:
     name: Emerlahn.AwsSsm
 
 deploy:
-- provider: NuGet
-  server: https://ci.appveyor.com/nuget/johnfahey-dtn0ofenb6gs
-  api_key:
-    secure: epbsnPYngj++DFStPqChVVabPI13sk9A5DWAiHg61UY=
-  on:
-    branch: master
-- provider: NuGet
-  name: Production
-  server:
-  api_key:
-    secure: pEEcr9Q18gv57zbNi0HFDlMBcY7/peFMBP40cYGyezyaR7Tlba4cX2887ksONfJS
-  tag: $(APPVEYOR_REPO_TAG_NAME)
-  on:
-    branch: master
-    appveyor_repo_tag: true
+  - provider: NuGet
+    name: Production
+    server:
+    api_key:
+      secure: pEEcr9Q18gv57zbNi0HFDlMBcY7/peFMBP40cYGyezyaR7Tlba4cX2887ksONfJS
+    tag: $(APPVEYOR_REPO_TAG_NAME)
+    on:
+      branch: master
+      appveyor_repo_tag: true
